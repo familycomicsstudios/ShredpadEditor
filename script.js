@@ -7,3 +7,7 @@ function save() {
     downloadableLink.click();
     document.body.removeChild(downloadableLink);
 }
+function load() {
+    var file = document.getElementById('file-input').click();
+    console.log(file);
+}
