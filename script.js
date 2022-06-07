@@ -8,22 +8,12 @@ function save() {
     document.body.removeChild(downloadableLink);
 }
 function load() {
-     var file = new Promise(resolve => {
-        let input = document.createElement('input');
-        input.type = 'file';
-        input.multiple = false;
-        input.accept = "text/plain";
-
-        input.onchange = () => {
-            let files = Array.from(input.files);
-            if (false)
-                resolve(files);
-            else
-                resolve(files[0]);
-            console.log(files.0);
-        };
-
-        input.click();
-    });
+     var file = document.getElementById("myFile").files[0];
+     var reader = new FileReader();
+     reader.onload = function (e) {
+         var textArea = document.getElementById("myTextArea");
+         textArea.value = e.target.result;
+     };
+     reader.readAsText(file);
 }
 
