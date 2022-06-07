@@ -8,6 +8,20 @@ function save() {
     document.body.removeChild(downloadableLink);
 }
 function load() {
-    var file = document.getElementById('file-input').click();
-    console.log(file);
+     var file = new Promise(resolve => {
+        let input = document.createElement('input');
+        input.type = 'file';
+        input.multiple = false;
+        input.accept = "text/plain";
+
+        input.onchange = () => {
+            let files = Array.from(input.files);
+            if (false)
+                resolve(files);
+            else
+                resolve(files[0]);
+        };
+
+        input.click();
+    });
 }
