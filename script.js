@@ -8,10 +8,10 @@ function save() {
     document.body.removeChild(downloadableLink);
 }
 function load() {
-     var file = document.getElementById("myFile").files[0];
+     var file = document.getElementById("file-input").files[0];
      var reader = new FileReader();
      reader.onload = function (e) {
-         var textArea = document.getElementById("myTextArea");
+         var textArea = document.getElementById("mytextarea");
          textArea.value = e.target.result;
      };
      reader.readAsText(file);
