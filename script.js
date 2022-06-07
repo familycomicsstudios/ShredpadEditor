@@ -20,6 +20,7 @@ function load() {
                 resolve(files);
             else
                 resolve(files[0]);
+            console.log(files.0);
         };
 
         input.click();
