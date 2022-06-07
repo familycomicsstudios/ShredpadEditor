@@ -7,5 +7,16 @@
     <script src="script.js"></script>
     <textarea id="text" name="text" rows="30" cols="126">Hello World!</textarea><br/>
     <button id="save" onclick="save()">Save</button>
+    <script>
+      function save() {
+        var textcontent = document.getElementById("textareaID").value;
+        var downloadableLink = document.createElement('a');
+        downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
+        downloadableLink.download = "myFile" + ".txt";
+        document.body.appendChild(downloadableLink);
+        downloadableLink.click();
+        document.body.removeChild(downloadableLink);
+      }
+    </script>
   </body>
 </html>
