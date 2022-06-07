@@ -1,5 +1,5 @@
 function save() {
-    var textcontent = document.getElementById("textareaID").value;
+    var textcontent = document.getElementById("mytextarea").value;
 var downloadableLink = document.createElement('a');
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
 downloadableLink.download = "myFile" + ".txt";
