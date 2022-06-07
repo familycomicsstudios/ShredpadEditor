@@ -1,9 +1,4 @@
 function save() {
-  var textcontent = document.getElementById("text").value;
-  var downloadableLink = document.createElement('a');
-  downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-  downloadableLink.download = "myFile" + ".txt";
-  document.body.appendChild(downloadableLink);
-  downloadableLink.click();
-  document.body.removeChild(downloadableLink);
+    var data = $('#mytextarea').val();
+    this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(data);
 }
